@@ -1,0 +1,11 @@
+其实删除功能并不难，两段视频，非常经典。
+Servlet 作用于 Service ，进而 Service 作用于 dao
+为什么Servlet不直接作用于 dao呢？
+因为在Servlet获取数据的过程中，可能存在数据类型的转换，在Service做一个过滤层比较友好。
+---------------------------------------------------------------------------------
+//5.跳转到查询所有的Servlet，因为我们没有传参，所以可以用response
+response.sendRedirect(request.getContextPath()+"/userListServlet");
+//3.将user 存入request
+request.setAttribute("user",user);//有参数传递，所以用request
+//4.转发到 update.jsp即可
+request.getRequestDispatcher("update.jsp").forward(request,response);
