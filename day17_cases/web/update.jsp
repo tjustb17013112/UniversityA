@@ -9,14 +9,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>修改用户</title>
-
-        <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/jquery-2.1.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
+        <!--导入布局js，共享header和footer-->
+        <script type="text/javascript" src="js/include.js"></script>
+        <!-- Site CSS -->
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/font-awesome.min.css" rel="stylesheet">
+        <link href="./css/site.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/hezuo.jpg"/>
     </head>
     <body>
-        <div class="container" style="width: 400px;">
+    <!--引入头部-->
+    <div id="header"></div>
+
+    <div class="container" style="width: 400px;">
         <h3 style="text-align: center;">修改医师信息</h3>
         <%--<form action="${pageContext.request.contextPath}/updateUserServlet" method="post">--%>
             <form action="${pageContext.request.contextPath}/updateUserServlet?id=${user.id}" method="post">
@@ -47,5 +54,8 @@
              </div>
         </form>
         </div>
-    </body>
+
+    <!--引入尾部-->
+    <div id="footer"></div>
+</body>
 </html>

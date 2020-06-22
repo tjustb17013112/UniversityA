@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>管理员登录</title>
-
-    <!-- 1. 导入CSS的全局样式 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
     <script src="js/jquery-2.1.0.min.js"></script>
     <!-- 3. 导入bootstrap的js文件 -->
@@ -22,10 +19,21 @@
             vcode.src= "${pageContext.request.contextPath}/checkCodeServlet?time="+ new Date().getTime();
         }
     </script>
+    <!--导入布局js，共享header和footer-->
+    <script type="text/javascript" src="js/include.js"></script>
+    <!-- Site CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/site.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/hezuo.jpg"/>
 </head>
 <body>
+<!--引入头部-->
+<div id="header"></div>
+
+<br/><br/>
 <div class="container" style="width: 400px;">
-    <h3 style="text-align: center;">医护人员登录</h3>
+    <h3 style="text-align: center;">登&nbsp;&nbsp;录</h3>
     <form action="${pageContext.request.contextPath}/loginServlet" method="post">
         <div class="form-group">
             <label for="user">用户名：</label><%--这里的label标签的作用于input标签域中的id对应，点击用户名可以看到效果，仅此而已--%>
@@ -46,7 +54,9 @@
         </div>
         <hr/>
         <div class="form-group" style="text-align: center;">
-            <input class="btn btn btn-primary" type="submit" value="登录">
+            <input class="btn btn-default" type="button" onclick="javascript:history.back(-1);" value="返回" />
+            <input class="btn btn-default" type="reset" value="重置" />
+            <input class="btn btn-default" type="submit" value="登录">
         </div>
     </form>
 
@@ -57,5 +67,8 @@
         <strong>${login_msg}</strong>
     </div>
 </div>
+
+<!--引入尾部-->
+<div id="footer"></div>
 </body>
 </html>

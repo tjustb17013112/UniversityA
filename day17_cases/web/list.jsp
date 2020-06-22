@@ -4,23 +4,19 @@
 <!-- 网页使用的语言 -->
 <html lang="zh-CN">
 <head>
-    <!-- 指定字符集 -->
     <meta charset="utf-8">
-    <!-- 使用Edge最新的浏览器的渲染方式 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
-    width: 默认宽度与设备的宽度相同
-    initial-scale: 初始的缩放比，为1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>用户信息管理系统</title>
-
-    <!-- 1. 导入CSS的全局样式 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
     <script src="js/jquery-2.1.0.min.js"></script>
     <!-- 3. 导入bootstrap的js文件 -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Site CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/site.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/hezuo.jpg"/>
     <style type="text/css">
         td, th {
             text-align: center;
@@ -68,11 +64,19 @@
             }
         }
     </script>
+    <!--导入布局js，共享header和footer-->
+    <script type="text/javascript" src="js/include.js"></script>
 </head>
 <body>
+<!--引入头部-->
+<div id="header"></div>
+
+
+
 <div class="container">
     <h3 style="text-align: center">医院医师信息管理</h3>
-    <a href="login.jsp" style="text-decoration:none;font-size:33px">医生登录
+    <a href="login.jsp" style="text-decoration:none;font-size:33px">医生登录</a>
+    <a href="index.jsp" style="text-decoration:none;font-size:33px">首页</a>
     <div style="float: right;margin: 5px">
         <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加医生信息</a>
         <%--<a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>--%>
@@ -101,5 +105,8 @@
         </table>
     </form>
 </div>
+
+<!--引入尾部-->
+<div id="footer"></div>
 </body>
 </html>
